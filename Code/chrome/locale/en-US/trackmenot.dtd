@@ -1,0 +1,34 @@
+<!ENTITY trackmenot "ProfileMeNot">
+<!ENTITY pmn.menu.enabled "Enabled">
+<!ENTITY pmn.menu.options "Options">
+<!ENTITY pmn.menu.help "Help">
+<!ENTITY tmn.menu.about "About">
+<!ENTITY tmn.option.help.faq "Help/FAQ">
+<!ENTITY tmn.option.searchengines "Search Engines">
+<!ENTITY tmn.option.show.queries "Show Queries">
+<!ENTITY tmn.option.current.queries "Current Queries">
+<!ENTITY tmn.option.enabled "Enabled">
+<!ENTITY tmn.option.show.status "Show Status">
+<!ENTITY tmn.option.ctrl.click "Ctrl-Click for multiple selections:">
+<!ENTITY tmn.option.select.all "Select All">
+<!ENTITY tmn.option.clear.all "Clear All ">
+<!ENTITY tmn.option.enable.burst "Enable Query Bursts">
+<!ENTITY tmn.option.query.freq "Avg. Query Rate:">
+<!ENTITY tmn.option.avg.queries "Query Frequency">
+<!ENTITY tmn.option.freq.10pm "10 per min">
+<!ENTITY tmn.option.freq.5pm "5  per min">
+<!ENTITY tmn.option.freq.1pm "1  link per min">
+<!ENTITY tmn.option.freq.2pm "30 links per hour">
+<!ENTITY tmn.option.freq.30ph "15 links per hour">
+<!ENTITY tmn.option.freq.15ph "8  links per hour">
+<!ENTITY tmn.option.freq.10ph "10 per hour">
+<!ENTITY tmn.option.freq.1ph "1  per hour">
+<!ENTITY tmn.option.logging "Logging Options">
+<!ENTITY tmn.option.log.show "Show Log">
+<!ENTITY tmn.option.log.clear "Clear Log">
+<!ENTITY tmn.option.cookies "Cookie Handling">
+<!ENTITY tmn.option.rss.validate "Validate">
+<!ENTITY tmn.option.rss.useDefaults "Use Defaults">
+<!ENTITY tmn.option.rss.caption "RSS feeds used to initialize the query list(comma-separated)">
+<!ENTITY tmn.option.kwBlackList.caption "List of black-listed keywords (comma-separated)">
+<!ENTITY tmn.about.danish "Danish translation by Tommy Mejldal">

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window class="dialog"
+  title="TrackMeNot - Spam"
+  orient="vertical"
+  autostretch="always"
+  onload="sizeToContent()"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<groupbox align="center" orient="horizontal">
+<vbox>
+
+  <text value="TrackMeNot" style="font-weight: bold; font-size: x-large;"/>
+  <separator class="thin"/>
+
+  <text value="One or more of the search engine's queried by TrackMeNot has begun to blocked requests." />
+  <text value="We recommend that you lower the query frequency (and enable burst-mode) in the TrackMeNot control panel."/>
+  
+  <description /> 
+  
+  <text value="Check TrackMeNot FAQ" class="url" style="text-decoration: underline " onclick="window.open('http://mrl.nyu.edu/~dhowe/TrackMeNot/faq.html#captcha'); window.close();" />
+
+  <separator class="thin"/>
+
+</vbox>
+
+
+
+<spring flex="1"/>
+
+
+
+<image src="chrome://trackmenot/skin/pmn_lg.png"/>
+
+
+
+</groupbox>
+
+
+
+  <hbox>
+
+  <spacer flex="1"/>
+
+   <button label="Close" oncommand="window.close();"/>
+
+  </hbox>
+
+
+
+</window>
+

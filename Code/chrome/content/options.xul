@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE overlay SYSTEM 'chrome://trackmenot/locale/trackmenot.dtd'>
+
+<dialog id="trackmenot-options"
+  title="ProfileMeNot"
+  ondialogaccept="PROFILEMENOT.optionsTMN.saveOptions()"
+  orient="vertical"
+  autostretch="always"
+  persist="screenX screenY"
+  buttons="accept,cancel" flex="1"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<stringbundleset id="tmn-string-bundle-set">
+   <stringbundle id="tmn-string-bundle"
+      src="chrome://trackmenot/locale/trackmenot.properties"/>
+  </stringbundleset>
+   <script type="application/x-javascript" src="utils.js"/>
+  <script type="application/x-javascript" src="trackmenot.js"/>
+  <script type="application/x-javascript" src="tmn_search.js"/>
+  <script type="application/x-javascript" src="rep_processor.js"/>
+  <script type="application/x-javascript" src="tmn_options.js"/>
+
+  <tabbox id="mainTabbox" flex="1" >
+  <tabs>
+    <tab label="Options" style="font-weight: bold; color: #00547d"/>
+  </tabs>
+
+    <tabpanels flex="3">
+
+      <!-- ================ GENERAL TAB =============== -->
+      <tabpanel flex="1">
+       <vbox>
+
+    	  <hbox align="right">
+				   <spring flex="1"/>
+  				 <text value="&tmn.option.help.faq;" class="url" style="font-weight: bold; color: #00547d; text-decoration: underline" onclick="window.open('http://www.cs.nyu.edu/trackmenot/faq.html#options');"/>
+			     <text value="    " class="url"/>
+        </hbox>
+
+        <groupbox align="center" orient="horizontal">
+         <vbox flex="1">
+            <spacer flex="1" />
+
+            <!--checkbox id="trackmenot-opt-showAlerts" label="Show Alerts" /-->
+            <!--checkbox id="trackmenot-opt-showIcon" label="Show Icon" /-->
+
+            <checkbox id="trackmenot-opt-enabled" label="&pmn.menu.enabled;" />
+
+            <checkbox id="trackmenot-opt-showStatus" label="&tmn.option.show.status;" />
+            <!--checkbox id="trackmenot-opt-clickThroughs" label="&tmn.option.click.throughs;" /-->
+            <checkbox id="trackmenot-opt-showQueries" label="&tmn.option.show.queries;" />
+ 	          <button label="&tmn.option.current.queries;" oncommand="PROFILEMENOT.optionsTMN.showSeeds()" />
+			   </vbox>
+				 <spring flex="1"/>
+    		 <image src="chrome://trackmenot/skin/pmn_lg.png"/>
+				 <spring flex="1"/>
+       </groupbox>
+
+       <groupbox>
+         <caption id="trackmenot-engines" label="&tmn.option.searchengines;"
+style="background-color: #f8f8f7; color: #00547d"  />
+         <hbox align="center">
+          <label value="&tmn.option.ctrl.click;"/>
+
+					<listbox maxwidth="110" id="trackmenot-opt-engines"
+             rows="1" seltype="single">
+				<!--	   <listitem id="aol" value="aol"    label="AOL Search" /> -->
+					   <listitem id="bing" value="bing"    label="Bing Search" />
+					<!--   <listitem id="yahoo" value="yahoo"  label="Yahoo! Search" />
+					   <listitem id="google" value="google" label="Google Search" /> 
+					   <listitem id="baidu" value="baidu" label="Baidu Search" /> -->
+				  </listbox>
+				 <spring flex="1"/>
+			    <vbox>
+				    <button label="&tmn.option.select.all;"
+				      oncommand="PROFILEMENOT.optionsTMN.setAllEngines(true)" />
+				    <button label="&tmn.option.clear.all;"
+				      oncommand="PROFILEMENOT.optionsTMN.setAllEngines(false)" />
+			    </vbox>
+				 <spring flex="1"/>
+         </hbox>
+       </groupbox>
+
+       <groupbox>
+         <caption id="trackmenot-queryfreq" label="&tmn.option.query.freq;" 
+style="background-color: #f4f3ee; color: #00547d"  />
+         <hbox align="center">
+	         <vbox flex="1">
+ 	           <spacer flex="1" />
+ 	           <checkbox id="trackmenot-opt-burstEnabled" 
+ 	             label="&tmn.option.enable.burst;"/>
+				       <!--oncommand="updateFrequencyMenu()" -->
+				   </vbox>
+				   <spring flex="1"/>
+           <label value="&tmn.option.avg.queries;" 
+             id="tmn-freq-label"/>
+           <menulist id ="trackmenot-opt-timeout">
+             <menupopup>
+         <!--      <menuitem id="t0" value="6000"    label="&tmn.option.freq.10pm;" /> -->
+         <!--      <menuitem id="t1" value="12000"   label="&tmn.option.freq.5pm;" /> -->
+	        <menuitem id="t-a1" value="30000"   label="&tmn.option.freq.1pm;" /> <!-- 2 queries per minute, 60 links per hour-->
+                <menuitem id="t2" value="60000"   label="&tmn.option.freq.2pm;" /> <!-- 1 query per minute, 30 links per hour-->
+        <!--        <menuitem id="t3" value="120000"  label="&tmn.option.freq.30ph;" /> --> <!-- 30 queries per hour, 15 links per hour -->
+	<!--        <menuitem id="t-a2" value="240000"   label="&tmn.option.freq.15ph;" /> --> <!-- 15 queries per hour, ~8 links per hour-->
+         <!--      <menuitem id="t4" value="360000"  label="&tmn.option.freq.10ph;" /> -->
+         <!--      <menuitem id="t5" value="3600000" label="&tmn.option.freq.1ph;" /> -->
+             </menupopup>
+           </menulist>
+				   <spring flex="1"/>
+         </hbox>
+       </groupbox>
+
+      
+       <groupbox>
+         <caption id="trackmenot-rssFeeds" label="&tmn.option.rss.caption;"
+style="background-color: #f4f3ee; color: #00547d"/>
+				 <hbox align="center">
+				 <!--label id="trackmenot-query-file-label"
+value="&tmn.option.rss.feeds; "/-->
+				   <textbox id="trackmenot-opt-rssFeeds" oninput="PROFILEMENOT.optionsTMN.rssTextChanged()" flex="1" newlines="replacewithcommas"/>
+				   <button id="trackmenot-opt-rssButton" label="" oncommand="PROFILEMENOT.optionsTMN.handleRssButtonClick()" />
+				  
+				 </hbox>
+        
+       </groupbox>
+       
+        <groupbox>
+         <caption id="trackmenot-kwBlackList" label="&tmn.option.kwBlackList.caption;"
+style="background-color: #f4f3ee; color: #00547d"/>
+				 <hbox align="center">
+				   <textbox id="trackmenot-opt-kwBlackList"  flex="1" newlines="replacewithcommas"/>
+				 </hbox>
+       </groupbox>
+   
+       <groupbox>
+         <caption id="trackmenot-logging" label="&tmn.option.logging;"
+style="background-color: #f4f3ee; color: #00547d"  />
+	   	   <hbox align="center">
+ 	         <checkbox id="trackmenot-opt-logDisabled"  label="Disabled" />
+ 	         <checkbox id="trackmenot-opt-logPreserved"  label="Persistent" />
+				   <spring flex="1"/>
+ 	         <button label="&tmn.option.log.show;" oncommand="PROFILEMENOT.optionsTMN.showLog()" />
+ 	         <button label="&tmn.option.log.clear;" oncommand="PROFILEMENOT.optionsTMN.clearLog()" />
+ 	         <button label="Show Frame" oncommand="PROFILEMENOT.optionsTMN.showFrame()" />
+				   <spring flex="1"/>
+         </hbox>
+       </groupbox>
+   
+
+
+
+			</vbox>
+      </tabpanel>
+    </tabpanels>
+    <spacer flex="1" />
+  </tabbox>
+  
+</dialog>

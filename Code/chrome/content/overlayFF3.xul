@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://trackmenot/content/trackmenot.css"?>
+
+<!DOCTYPE window [
+<!ENTITY % trackmenotDTD SYSTEM "chrome://trackmenot/locale/trackmenot.dtd">
+%trackmenotDTD;
+]>
+<!--DOCTYPE overlay SYSTEM "chrome://trackmenot/locale/trackmenot.dtd"-->
+
+<overlay id="trackmenot-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script src="chrome://trackmenot/content/utils.js"/>
+ <script src="chrome://trackmenot/content/tmn_search.js"/>
+ <script src="chrome://trackmenot/content/rep_processor.js"/>
+ <script src="chrome://trackmenot/content/trackmenot.js"/>
+   <script src="chrome://trackmenot/content/editor.js"/>
+
+
+                                                           
+<menupopup id="menu_ToolsPopup">
+  <menu id="trackmenot-tools-menu" label="ProfileMeNot" 
+     accesskey="T"
+     insertafter="javascriptConsole,devToolsSeparator">
+
+   <menupopup id="profilemenot-tools-popup">
+     <menuitem id="profilemenot-enabled" label="&pmn.menu.enabled;" 
+       accesskey="E" class="menuitem-iconic"
+       oncommand="PROFILEMENOT.utils.toggleEnabled();"
+     /><!--type="checkbox" -->
+     <menuitem label="&pmn.menu.options;" 
+       accesskey="O" class="menuitem-iconic"
+       oncommand="PROFILEMENOT.utils.showOptionsDialog();"
+       image="chrome://trackmenot/skin/option_icon.png"
+     />
+     <menuitem label="Editor" 
+       accesskey="D" class="menuitem-iconic"
+       oncommand="PROFILEMENOT.utils.showEditorWindow();"
+       image="chrome://trackmenot/skin/feedIcon16.png"
+     />
+    <menuitem label="&pmn.menu.help;"
+       accesskey="H" class="menuitem-iconic"
+       oncommand="window.open('http://people.scs.carleton.ca/~ssajjadp/experiment.html','ProfileMeNot - FAQ', 'scrollbars=yes,menubar=no,titlebar=yes,resizable=yes');"      image="chrome://trackmenot/skin/help_icon.png" 
+     />
+     <menuitem label="&tmn.menu.about;" 
+       accesskey="A" class="menuitem-iconic"
+       oncommand="PROFILEMENOT.utils.showAboutDialog();"
+       image="chrome://trackmenot/skin/about_icon.png" 
+     />
+   </menupopup>
+  </menu>
+</menupopup>
+
+<statusbar id="status-bar">
+
+ <stringbundleset id="tmn-string-bundle-set">
+   <stringbundle id="tmn-string-bundle"
+     src="chrome://trackmenot/locale/trackmenot.properties"/>
+ </stringbundleset>
+
+  <statusbarpanel id="trackmenot-statusbar" onmouseover=""
+insertafter="page-report-button,statusbarpanel-iconic-text" tooltiptext="Right-click for ProfileMeNot menu" context="pmn-statusbar-menu">
+    <hbox>
+      <image id="profilemenot-icon" src="chrome://trackmenot/skin/pmn_icon.png" />
+      <label id="profilemenot-label" value="" />
+    </hbox>
+  </statusbarpanel>
+    <menupopup id="pmn-statusbar-menu" position="before_end"
+          onpopupshowing="" onpopuphidden="">
+     <menuitem id="pmn-status-enabled" label="&pmn.menu.enabled;"
+       accesskey="E" class="menuitem-iconic"
+       oncommand="PROFILEMENOT.utils.toggleEnabled();"
+     />
+     <menuitem label="&pmn.menu.options;"
+       accesskey="O" class="menuitem-iconic"
+       oncommand="PROFILEMENOT.utils.showOptionsDialog();"
+       image="chrome://trackmenot/skin/option_icon.png"
+     />
+    <menuitem label="&pmn.menu.help;"
+       accesskey="H" class="menuitem-iconic"
+       oncommand="window.open('http://www.cs.nyu.edu/trackmenot/trackmenot/faq.html','TrackMeNot - FAQ', 'scrollbars=yes,menubar=no,titlebar=yes,resizable=yes'); "      image="chrome://trackmenot/skin/help_icon.png"
+     />
+    </menupopup>
+</statusbar>
+</overlay>

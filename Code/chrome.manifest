@@ -1,0 +1,18 @@
+content trackmenot chrome/content/
+content trackmenot chrome/content/tmn_feed.html 
+overlay chrome://browser/content/browser.xul chrome://trackmenot/content/overlayFF3.xul appversion<=3.6.* 
+overlay chrome://browser/content/browser.xul chrome://trackmenot/content/overlayFF4.xul appversion>3.6.*
+
+locale trackmenot en-US chrome/locale/en-US/
+locale trackmenot fr-FR chrome/locale/fr-FR/
+locale trackmenot da-DK chrome/locale/da-DK/
+locale trackmenot de-DE chrome/locale/de-DE/
+locale trackmenot hr-HR chrome/locale/hr-HR/
+locale trackmenot nl-NL chrome/locale/nl-NL/
+locale trackmenot pt-BR chrome/locale/pt-BR/
+locale trackmenot zh-CN chrome/locale/zh-CN/
+
+skin trackmenot classic/1.0 chrome/skin/
+
+
+style chrome://global/content/customizeToolbar.xul chrome://trackmenot/skin/trackmenot.css 

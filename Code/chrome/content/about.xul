@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window class="dialog"
+
+  title="ProfileMeNot - About"
+
+  orient="vertical"
+
+  autostretch="always"
+
+  onload="sizeToContent()"
+
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+
+
+<groupbox align="center" orient="horizontal">
+
+
+
+<vbox>
+
+  <text value="ProfileMeNot" style="font-weight: bold; font-size: x-large;"/>
+
+  <text value="ver 1.0a"/>
+
+  <separator class="thin"/>
+
+  <text value="Created By:" style="font-weight: bold;"/>
+
+  <text value="Seyyed Hadi Sajjadpour" class="url"
+        onclick="window.open('http://people.scs.carleton.ca/~ssajjadp/experiment.html'); window.close();"/>
+  <text value="Developed By:" style="font-weight: bold;"/>
+  <text value="Seyyed Hadi Sajjadpour"/>
+
+   <text value="Credits:" style="font-weight: bold;"/>
+
+     <text value="This work is built on top of TrackMeNot"/>
+     <text value="Created by: Daniel C. Howe, Helen Nissenbaum"/>
+    <text value="Developed by: Vincent Toubiana"/>
+       <text value="http://cs.nyu.edu/trackmenot/" class="url" style="text-decoration: underline " onclick="window.open('http://cs.nyu.edu/trackmenot/'); window.close();"/>
+  <separator class="thin"/>
+
+    <text value="Home Page:" style="font-weight:bold; "/>
+
+    <text value="http://people.scs.carleton.ca/~ssajjadp/experiment.html" class="url" style="text-decoration: underline " onclick="window.open('http://people.scs.carleton.ca/~ssajjadp/experiment.html'); window.close();"/>
+
+  <separator class="thin"/>
+    <text value="Translators (Based on TrackMeNot):" style="font-weight:bold; "/>
+    <text value="German translation by Jens 'woelfchen'" />
+    <text value="Danish translation by Tommy Mejldal"  />
+    <text value="Dutch translation by markh van BabelZilla.org"  />
+    <text value="Portuguese translation by Edgard Dias Magalhães" />
+    <text value="Chinese translation by BruceH"/>
+    <text value="Croatian translation by rlicul"/>
+  <separator class="thin"/>
+
+</vbox>
+
+
+
+<spring flex="1"/>
+
+
+
+<image src="chrome://trackmenot/skin/pmn_lg.png"/>
+
+
+
+</groupbox>
+
+
+
+  <hbox>
+
+  <spacer flex="1"/>
+
+   <button label="Close" oncommand="window.close();"/>
+
+  </hbox>
+
+
+
+</window>
+

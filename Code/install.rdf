@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>3.5</em:minVersion>
+        <em:maxVersion>19.*</em:maxVersion>
+      </Description>
+    </em:targetApplication> 
+
+    <em:name>ProfileMeNot</em:name>
+    <em:id>profilemenot@scs.carleton.ca</em:id>
+    <em:version>1.3a</em:version>
+    <em:localized>
+      <em:locale>en-US</em:locale>
+      <em:description>Protects against data-profiling by Ad-networks.</em:description>
+    </em:localized>
+    <em:localized>
+      <em:locale>fr-FR</em:locale>
+      <em:description>Protects against data-profiling by Ad-networks.</em:description>
+    </em:localized>
+    <em:creator>Hadi Sajjadpour, under the supervisions of Evangelos Kranakis and Carlisle Adams, built on top of work created by Daniel C. Howe and Helen Nissenbaum, developed by Vincent Toubiana</em:creator>
+    <em:iconURL>chrome://trackmenot/skin/tmn.png</em:iconURL>
+    <em:optionsURL>chrome://trackmenot/content/options.xul</em:optionsURL>
+    <em:homepageURL>http://people.scs.carleton.ca/~ssajjadp</em:homepageURL>
+
+  </Description>
+
+</RDF>
