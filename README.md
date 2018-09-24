@@ -1,6 +1,9 @@
 # ProfileMeNot
 Online Behavioral adverstising obfuscator
 
+<b> Copyright </b>
+ProfileMeNot was built on top of TrackMeNot 
+
 <b> To Install </b>
 Drag and drop .xpi file into firefox. Note that the extension is not working with newer versions of FireFox.
 This was last tested with Firefox 23.
