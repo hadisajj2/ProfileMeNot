@@ -16,3 +16,5 @@ Go under code directory
 The only IDE that will allow you to view a Firefox extension code is Komodo edit. It is currently not update to work with the latest
 version of Komodo edit. If you like, you can contribute to the project.
 
+<b> Exact Algorithms Used </b>
+To get more information on how ProfileMeNot works and how the algorithms are derived, see Thesis.pdf
